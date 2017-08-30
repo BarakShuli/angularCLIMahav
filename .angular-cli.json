@@ -3,13 +3,16 @@
   "project": {
     "name": "angular-cli-proj"
   },
+
   "apps": [
     {
       "root": "src",
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "sw.js",
+        { "glob": "**/*", "input": "../node_modules/cesium/Build/Cesium", "output": "./assets/cesium" }
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,10 +21,17 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
+
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/cesium/Build/Cesium/Widgets/widgets.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+         "../node_modules/jquery/dist/jquery.min.js",
+         "../node_modules/cesium/Build/Cesium/Cesium.js",
+         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

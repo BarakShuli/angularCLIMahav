@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+ac-map{
+  display:block;
+  height:100%;
+}
+sd-cesium, ac-map > div{
+  height:1000px;
+}
